@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/output.css" />
+    <title>Info</title>
+  </head>
+  <body class="bg-[#F5F5F5] m-0">
+    <!-- Nav Star -->
+    <nav class="z-50 fixed top-0 w-full">
+      <div
+        class="bg-white w-full mx-auto flex justify-between items-center md:py-4 md:px-5 px-4 shadow-xl"
+      >
+        <div class="logo h-10 flex">
+          <img
+            src="./Image/Logo-nav.png"
+            alt=""
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <button
+          onclick="openNavbar()"
+          class="toggle h-16 flex items-center md:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            class="w-6 h-6 fill-[#025464] cursor-pointer"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+            ></path>
+          </svg>
+        </button>
+        <ul class="hidden md:flex md:gap-4 md:mx-auto text-sm">
+          <li>
+            <a class="text-slate-500 font-semibold" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="text-slate-500 font-semibold" href="about.html">About</a>
+          </li>
+          <li>
+            <a class="text-slate-500 font-semibold" href="partner.html"
+              >Patner</a
+            >
+          </li>
+          <li>
+            <a class="text-slate-500 font-semibold" href="service.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a class="text-slate-500 font-semibold" href="galeri.html"
+              >Galeri</a
+            >
+          </li>
+          <li><a class="text-slate-500 font-semibold" href="">Info</a></li>
+          <li><a class="text-slate-500 font-semibold" href="">Karir</a></li>
+          <li><a class="text-slate-500 font-semibold" href="">Kontak</a></li>
+        </ul>
+        <button
+          class="bg-[#018491] py-3 px-4 text-white hidden md:flex rounded-full text-xs font-semibold text-center"
+          onclick="openLogin()"
+        >
+          Masuk / Daftar
+        </button>
+      </div>
+    </nav>
+    <!-- Nav End -->
+
+    <!-- Sidebar Start -->
+    <aside
+      class="w-full h-screen bg-white bg-opacity-90 fixed top-0 transition-all duration-200 ease-in-out translate-x-full md:hidden z-50"
+    >
+      <div
+        class="content backdrop-blur h-full flex items-center justify-center"
+      >
+        <button
+          onclick="closeNavbar()"
+          class="absolute text-white top-3 right-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 opacity-60"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+            ></path>
+          </svg>
+        </button>
+        <ul class="flex flex-col gap-2 text-center">
+          <li>
+            <a class="text-slate-500 font-semibold" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="text-slate-500 font-semibold" href="about.html">About</a>
+          </li>
+          <li>
+            <a class="text-slate-500 font-semibold" href="partner.html"
+              >Patner</a
+            >
+          </li>
+          <li>
+            <a class="text-slate-500 font-semibold" href="service.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a class="text-slate-500 font-semibold" href="galeri.html"
+              >Galeri</a
+            >
+          </li>
+          <li><a class="text-slate-500 font-semibold" href="">Info</a></li>
+          <li><a class="text-slate-500 font-semibold" href="">Karir</a></li>
+          <li><a class="text-slate-500 font-semibold" href="">Kontak</a></li>
+          <li
+            class="bg-slate-500 p-3 rounded-lg text-white cursor-pointer"
+            onclick="openLogin()"
+          >
+            Masuk / Daftar
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <!-- Start -->
+
+    <!-- login Start -->
+    <section
+      class="login w-full h-screen bg-black bg-opacity-50 fixed top-0 transition-all duration-500 scale-0 ease-in-out p-8 z-50"
+    >
+      <div
+        class="container w-full h-full bg-white rounded-xl p-6 md:p-8 mx-auto md:grid md:items-center md:grid-cols-2 md:max-w-[820px] relative"
+      >
+        <button onclick="closeLogin()" class="absolute top-3 right-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 opacity-60"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+            ></path>
+          </svg>
+        </button>
+        <div class="image hidden md:block">
+          <img src="./Image/Enter OTP-amico 2.png" alt="" />
+        </div>
+        <div class="login-teks w-full flex flex-col gap-8">
+          <h4 class="text-lg font-bold text-slate-700">Sign In</h4>
+          <div class="flex flex-col gap-2">
+            <label for="email" class="text-sm font-semibold text-slate-500">
+              Email Address
+            </label>
+            <input
+              type="text"
+              id="email"
+              class="w-full h-10 border border-slate-500 rounded-full text-[10px] md:text-xs lg:text-sm text-slate-600 px-3 md:px-4 py-2"
+            />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="email" class="text-sm font-semibold text-slate-500">
+              Password
+            </label>
+            <input
+              type="text"
+              id="email"
+              class="w-full h-10 border border-slate-500 rounded-full text-[10px] md:text-xs lg:text-sm text-slate-600 px-3 md:px-4 py-2"
+            />
+            <a
+              href=""
+              class="text-right text-xs text-slate-500 hover:text-sky-700"
+              >Lupa password</a
+            >
+          </div>
+          <div class="grid gap-4">
+            <button
+              class="w-full h-full bg-slate-500 py-2 rounded-full text-white text-sm"
+            >
+              Sign In
+            </button>
+            <button
+              class="w-full h-full bg-slate-300 border py-2 rounded-full text-slate-600 text-sm"
+            >
+              Create New Account
+            </button>
+            <button
+              class="w-full h-full bg-slate-300 border py-2 rounded-full text-slate-600 text-sm"
+            >
+              Sign With Google
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Login End -->
+
+    <!-- info Start -->
+    <section class="mt-10 md:mt-0 h-screen md:px-12 flex items-center">
+      <div
+        class="container p-8 md:p-0 md:rounded-md overflow-hidden bg-white mx-auto my-auto flex flex-col gap-4 md:gap-8 md:flex-row"
+      >
+        <img src="Image/1.jpeg" alt="" class="md:max-w-[280px]" />
+        <div class="info flex flex-col gap-4 justify-center md:p-8">
+          <h4 class="text-xl font-semibold text-slate-600">
+            Bursa Efek Indonesia
+          </h4>
+          <p class="text-sm text-slate-500">
+            Bursa efek adalah sebuah pasar yang berhubungan dengan pembelian dan
+            penjualan efek perusahaan yang sudah terdaftar di bursa itu. Bursa
+            efek tersebut, bersama-sama dengan pasar uang merupakan sumber utama
+            permodalan eksternal bagi perusahaan dan pemerintah.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- info End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-[#80A9B1]">
+      <div
+        class="container w-full p-8 md:px-12 flex flex-col gap-4 md:flex-row justify-between mx-auto"
+      >
+        <div class="alamat flex flex-col gap-2">
+          <div class="image">
+            <img src="./Image/Logo-nav.png" alt="" class="h-10" />
+          </div>
+          <div class="flex gap-3 items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[24px]"
+              fill="#fff"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"
+              ></path>
+            </svg>
+            <h5 class="text-xs text-white font-light">
+              Jl. Perintis Kemerdekaan No.59, Kota Makassar
+            </h5>
+          </div>
+          <div class="flex gap-3 items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[24px]"
+              fill="#ffffff"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M231.59,90.13h0C175.44,34,80.56,34,24.41,90.13c-20,20-21.92,49.49-4.69,71.71A16,16,0,0,0,32.35,168a15.8,15.8,0,0,0,5.75-1.08l49-17.37.29-.11a16,16,0,0,0,9.75-11.73l5.9-29.52a76.52,76.52,0,0,1,49.68-.11h0l6.21,29.75a16,16,0,0,0,9.72,11.59l.29.11,49,17.39a16,16,0,0,0,18.38-5.06C253.51,139.62,251.58,110.13,231.59,90.13ZM223.67,152l-.3-.12-48.82-17.33-6.21-29.74A16,16,0,0,0,158,93a92.56,92.56,0,0,0-60.34.13,16,16,0,0,0-10.32,12l-5.9,29.51L32.63,151.86c-.1,0-.17.13-.27.17-12.33-15.91-11-36.23,3.36-50.58,25-25,58.65-37.53,92.28-37.53s67.27,12.51,92.28,37.53C234.61,115.8,236,136.12,223.67,152Zm.32,48a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,200Z"
+              ></path>
+            </svg>
+            <h5 class="text-xs text-white font-light">+6281-2345-6782</h5>
+          </div>
+          <div class="flex gap-3 items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[24px]"
+              fill="#ffffff"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"
+              ></path>
+            </svg>
+            <h5 class="text-xs text-white font-light">
+              insaniasinergia@gmail.com
+            </h5>
+          </div>
+        </div>
+        <div class="layanan text-white">
+          <h4 class="text-sm font-semibold mb-4">Layanan Insania Sinergia</h4>
+          <ul class="">
+            <li><a href="" class="text-xs font-semibold">Jasa Pembukuan</a></li>
+            <li>
+              <a href="" class="text-xs font-semibold">Jasa Pendampingan</a>
+            </li>
+            <li>
+              <a href="" class="text-xs font-semibold">Konsultasi Pajak</a>
+            </li>
+            <li>
+              <a href="" class="text-xs font-semibold"
+                >Pembuatan dan Perubahan Akta</a
+              >
+            </li>
+            <li>
+              <a href="" class="text-xs font-semibold"
+                >Kuasa Hukum Pengadilan Pajak</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="Sumber text-white">
+          <h4 class="text-sm font-semibold mb-4">Sumber</h4>
+          <ul>
+            <li><a href="" class="text-xs font-semibold">FAQ</a></li>
+            <li>
+              <a href="" class="text-xs font-semibold">Jasa Studi Kasus</a>
+            </li>
+          </ul>
+        </div>
+        <div class="Company text-white">
+          <h4 class="text-sm font-semibold mb-4">Company</h4>
+          <ul c>
+            <li><a href="" class="text-xs font-semibold">About</a></li>
+            <li>
+              <a href="" class="text-xs font-semibold">Contact</a>
+            </li>
+            <li>
+              <a href="" class="text-xs font-semibold">Careers</a>
+            </li>
+            <li>
+              <a href="" class="text-xs font-semibold">Youtube</a>
+            </li>
+            <li>
+              <a href="" class="text-xs font-semibold">Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script>
+      const sidebar = document.querySelector("aside");
+
+      function openNavbar() {
+        sidebar.classList.add("translate-x-0");
+        sidebar.classList.remove("translate-x-full");
+      }
+      function closeNavbar() {
+        sidebar.classList.remove("translate-x-0");
+        sidebar.classList.add("translate-x-full");
+      }
+
+      const login = document.querySelector(".login");
+
+      function openLogin() {
+        login.classList.add("scale-100");
+        login.classList.remove("scale-0");
+      }
+      function closeLogin() {
+        login.classList.remove("scale-100");
+        login.classList.add("scale-0");
+      }
+    </script>
+  </body>
+</html>
